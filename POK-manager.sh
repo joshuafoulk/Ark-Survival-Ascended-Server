@@ -1398,7 +1398,7 @@ get_build_id_from_acf() {
 }
 check_for_POK_updates() {
   echo "Checking for updates to POK-manager.sh..."
-  local script_url="https://raw.githubusercontent.com/Acekorneya/Ark-Survival-Ascended-Server/master/POK-manager.sh"
+  local script_url="https://raw.githubusercontent.com/joshuafoulk/Ark-Survival-Ascended-Server/master/POK-manager.sh"
   local temp_file="/tmp/POK-manager.sh"
 
   if command -v wget &>/dev/null; then
@@ -1509,7 +1509,7 @@ ensure_steamcmd_executable() {
 # Function to update an instance
 update_manager_and_instances() {
   echo "----- Checking for updates to POK-manager.sh -----"
-  local script_url="https://raw.githubusercontent.com/Acekorneya/Ark-Survival-Ascended-Server/master/POK-manager.sh"
+  local script_url="https://raw.githubusercontent.com/joshuafoulk/Ark-Survival-Ascended-Server/master/POK-manager.sh"
   local temp_file="/tmp/POK-manager.sh"
 
   if command -v wget &>/dev/null; then
