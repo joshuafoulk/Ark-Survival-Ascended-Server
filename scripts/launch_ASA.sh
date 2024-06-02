@@ -72,7 +72,6 @@ start_server() {
   fi
 
   # Initialize server arguments
-  local mods_arg=""
   local battleye_arg=""
   local rcon_args=""
   local custom_args=""
@@ -80,11 +79,6 @@ start_server() {
   local server_password_arg=""
   local session_name_arg="SessionName=\"${SESSION_NAME}\""
 
-  # Check if MOD_IDS is set and not empty
-  if [ -n "$MOD_IDS" ]; then
-    mods_arg="-mods=${MOD_IDS}"
-  fi
-  
   # Initialize the passive mods argument
   local passive_mods_arg=""
   if [ -n "$PASSIVE_MODS" ]; then
@@ -130,7 +124,7 @@ start_server() {
   #fi
   
   # Construct the full server start command
-  local server_command="proton run /home/pok/arkserver/ShooterGame/Binaries/Win64/ArkAscendedServer.exe $MAP_PATH?listen?$session_name_arg?${rcon_args}${server_password_arg}?ServerAdminPassword=${SERVER_ADMIN_PASSWORD} -Port=${ASA_PORT} -WinLiveMaxPlayers=${MAX_PLAYERS} $cluster_id_arg -servergamelog -servergamelogincludetribelogs -ServerRCONOutputTribeLogs -NotifyAdminCommandsInChat $custom_args $mods_arg $battleye_arg $passive_mods_arg"
+  local server_command="proton run /home/pok/arkserver/ShooterGame/Binaries/Win64/ArkAscendedServer.exe $MAP_PATH?listen?$session_name_arg?${rcon_args}${server_password_arg}?ServerAdminPassword=${SERVER_ADMIN_PASSWORD} -Port=${ASA_PORT} -WinLiveMaxPlayers=${MAX_PLAYERS} $cluster_id_arg -servergamelog -servergamelogincludetribelogs -ServerRCONOutputTribeLogs -NotifyAdminCommandsInChat $custom_args $battleye_arg $passive_mods_arg"
 
   # Start the server using Proton-GE
   echo "Starting server with Proton-GE..."
